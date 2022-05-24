@@ -4,7 +4,7 @@ local Accounts = {}
 function ExploitBan(id, reason)
 	MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)', {
 		GetPlayerName(id),
-		QBCore.Functions.GetIdentifier(id, QBConfig.Server.Identifier),
+		QBCore.Functions.GetIdentifier(id, QBCore.Config.Server.Identifier),
 		QBCore.Functions.GetIdentifier(id, 'discord'),
 		QBCore.Functions.GetIdentifier(id, 'ip'),
 		reason,
